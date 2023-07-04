@@ -10,10 +10,10 @@ def get_location_id(query):
 	"""
 	get location id
 	"""
-    r = requests.get(LOCATION_SEARCH_URL, params={'query': query})
-    data = r.json()
-    if len(data):
-        return data[0]['woeid']
+	r = requests.get(LOCATION_SEARCH_URL, params={'query': query})
+	data = r.json()
+	if len(data):
+		Sreturn data[0]['woeid']
 
 
 def get_weather(query, days=1):
@@ -42,10 +42,10 @@ def print_weather_details(data):
 	"""
 	print weather details
 	"""
-    print("Location:", data['location'], end='\n\n')
-    for row in data['weather']:
-        print("Date:", row['date'])
-        print("Weather Type:", row['weather_state_name'])
-        print("Min Temp.:", row['min_temp'])
-        print("Max Temp.:", row['max_temp'])
-        print()
+	print("Location:", data['location'], end='\n\n')
+	for row in data['weather']:
+        	print("Date:", row['date'])
+        	print("Weather Type:", row['weather_state_name'])
+        	print("Min Temp.:", row['min_temp'])
+        	print("Max Temp.:", row['max_temp'])
+        	print()
